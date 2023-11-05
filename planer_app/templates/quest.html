@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+
+<style>
+    .quest-container{
+        margin: auto;
+        margin-top: 50px;
+        width: 20%;
+        border: 3px solid #99335f;
+        padding: 10px;
+        text-align: center;
+        margin: 5px auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        overflow: hidden;
+        position: relative;
+        transition: background-color 0.1s ease;
+        transition: transform 0.2s ease;
+    }
+    .quest {
+        padding: 5%;
+        background-color: #fff;
+        border: 1px solid #ddd;
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+        overflow: hidden;
+        position: relative;
+        transition: background-color 0.1s ease;
+        transition: transform 0.2s ease;
+    }
+    .quest-container:hover {
+        background-color: #99335f;
+        color: #99335f;
+        transform: scale(0.9);
+    }
+    a { 
+        color: inherit;
+    }
+</style>
+
+{% for quest in quests %}
+<div class="quest-container">
+    <div class="quest">
+<h1><a href="{% url 'detail' quest.quest_id %}">{{quest.title}}</a></h1>
+    </div>
+</div>
+{% endfor %}
+
+{% endblock %}

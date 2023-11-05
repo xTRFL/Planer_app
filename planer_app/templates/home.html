@@ -22,7 +22,7 @@
       margin: auto;
         margin-top: 50px;
         width: 50%;
-        border: 3px solid #336699;
+        border: 3px solid #99335f;
         padding: 10px;
         text-align: center;
     }
@@ -31,18 +31,13 @@
 <div class="center">
 {% if user.is_authenticated %}
   <p>Zalogowano: {{ user.username }}</p>
-  <a href="{% url 'logout' %}" class="user-buttons">Wyloguj</a>
+  <a href="" class="user-buttons">Wyloguj</a>
 {% else %}
   <p>Zaloguj się.</p>
-  <a href="{% url 'login' %}" class="user-buttons">Zaloguj się</a>
-  <p>Nie masz jeszcze konta? Zarejestruj się</p>
-  <a href="{% url 'signup' %}" class="user-buttons">Zarejestruj się</a>
+  <a href="" class="user-buttons">Zaloguj się</a>
 {% endif %}
 <div class="content-container">
-<p>Aby zobaczyć dostępne filmy kliknij przycisk lista filmów.</p>
-<p>Aby zobaczyć rekomendacje kliknij na przycisk rekomendacje.</p>
-<p>Rekomendacje wymagają wcześniejszego wygenerowania</p>
-<p>Ocenione filmy możesz zobaczyć w panelu konta</p>
+<p>Zaloguj się, aby korzystać z serwisu.</p>
 </div>
 </div>
 {% endblock %}

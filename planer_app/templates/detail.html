@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block title %}User account{% endblock %}
+
+{% block content %}
+
+<style>
+    .content-container{
+      margin: auto;
+        margin-top: 50px;
+        width: 50%;
+        border: 3px solid #99335f;
+        padding: 10px;
+        text-align: center;
+    }
+    .warning-container{
+        margin: auto;
+        width: 50%;
+        border: 3px #993333;
+        background-color: #993333;
+        background-blend-mode: saturation;
+        margin-top: 25px;
+        padding: 5px;
+        text-align: center;
+        font-weight: 600;
+    }
+</style>
+{%if quest.quest_id < id%}
+<div class="warning-container">
+<p>{{ id }} <- Id does not exist! Displaying your latest quest.</p>
+</div>
+{%endif%}
+<div class="content-container">
+<h2>{{quest.title}}</h2>
+<p>{{quest.description}}</p>
+{% if quest.type == 'Quest'%}
+<div style="font-weight: 600;">
+{% if quest.done == False %}
+<p>Not done yet.</p>
+{% endif %}
+{% if quest.done == True %}
+<p>You already finished this quest!</p>
+{% endif %}
+</div>
+{% endif %}
+
+</div>
+{% endblock %}

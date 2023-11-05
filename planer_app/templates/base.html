@@ -10,7 +10,7 @@
       font-family: Arial, sans-serif;
     }
     .menu-container {
-      background-color: #336699;
+      background-color: #99335f;
       margin: 0 auto;
       display: flex;
       justify-content: space-between;
@@ -74,10 +74,8 @@
 </head>
 <body>
   <div class="menu-container">
-    <a class="menu-item" href="{%url 'index' %}">Strona Główna</a>
-    <a class="menu-item" href="{% url 'movies' %}">Lista Filmów</a>
-    <a class="menu-item" href="{% url 'recommendation' %}">Rekomendacje</a>
-    <a class="menu-item" href="{% url 'user' %}">Konto</a>
+    <a class="menu-item" href="">Strona Główna</a>
+    <a class="menu-item" href="">Konto</a>
   </div>
   <div class="content">
     {% block content %}
